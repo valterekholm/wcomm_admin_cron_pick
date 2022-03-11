@@ -4,6 +4,7 @@
    $username  = "root";
    $passwd = "";
    $dbname = "wordpress";
+   $my_domain = "https://hej.se/"
 
 ?>
 
@@ -119,7 +120,7 @@ if ($result->num_rows > 0) {
   //$row["post_type"].
   while($row = $result->fetch_assoc()) {
     $img = $row["thumbnail"];
-    $img_url = $base_url . "wp-content/uploads/$img";
+    $img_url = $my_domain . "wp-content/uploads/$img";
     $title = $row["post_title"];
     $stock = $row["stock"];
     $price = $row["price"];
@@ -138,7 +139,7 @@ if ($result->num_rows > 0) {
         //echo "<img src='$img_url' width=300>" . "<br>";
         printf("<a href='$img_url' target='_blank'>Bild</a>   ");
     }
-    $product_url = $base_url . "product/$slug/";
+    $product_url = $my_domain . "product/$slug/";
     printf("Adress till produkt: $product_url");
 
   }
